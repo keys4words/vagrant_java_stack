@@ -1,5 +1,5 @@
 # stack1
-Automation deploy vith Vagrant:
+Automation local deploy Java webapp (blog with authority & DB) via Vagrant:
 - VM Tomcat
 - VM RabbitMQ
 - VM Memcache
