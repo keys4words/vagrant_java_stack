@@ -8,7 +8,6 @@ Vagrant.configure("2") do |config|
     db01.vm.hostname = "db01"
     db01.vm.network "private_network", ip: "192.168.33.15"
     db01.vm.provision "shell", path: "mysql.sh"  
-
   end
   
 ### Memcache vm  #### 
@@ -22,7 +21,7 @@ Vagrant.configure("2") do |config|
 ### RabbitMQ vm  ####
   config.vm.define "rmq01" do |rmq01|
     rmq01.vm.box = "geerlingguy/centos7"
-  rmq01.vm.hostname = "rmq01"
+    rmq01.vm.hostname = "rmq01"
     rmq01.vm.network "private_network", ip: "192.168.33.16"
     rmq01.vm.provision "shell", path: "rabbitmq.sh"  
   end
@@ -35,7 +34,7 @@ Vagrant.configure("2") do |config|
     app01.vm.provision "shell", path: "tomcat.sh"  
     app01.vm.provider "virtualbox" do |vb|
      vb.memory = "1024"
-   end
+    end
    end
    
   
@@ -43,8 +42,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "web01" do |web01|
     web01.vm.box = "ubuntu/xenial64"
     web01.vm.hostname = "web01"
-  web01.vm.network "private_network", ip: "192.168.33.11"
-  web01.vm.provision "shell", path: "nginx.sh"  
-end
+    web01.vm.network "private_network", ip: "192.168.33.11"
+    web01.vm.provision "shell", path: "nginx.sh"  
+  end
   
 end
